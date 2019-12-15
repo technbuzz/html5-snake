@@ -44,6 +44,7 @@ function updateLoop() {
 
 
 
+
 function draw() {
   context.clearRect(0,0, 400, 400)
   snake.forEach(([x, y]) => {

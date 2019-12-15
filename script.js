@@ -15,9 +15,28 @@ const snake = [
   [1, 4]
 ]
 
-snake.forEach(([x,y]) => {
-  context.fillRect(x, y, 1, 1)
-})
+let keyboardState = [ 1, 0]
+
+function updateLoop() {
+  let tail = snake.pop()
+  let head = snake[0]
+  tail[0] = head[0] + keyboardState[0]
+  tail[1] = head[1] + keyboardState[1]
+  snake.unshift(tail)
+
+  draw()
+}
 
 
-console.log(canvas);
+
+function draw() {
+  context.clearRect(0,0, 400, 400)
+  snake.forEach(([x, y]) => {
+    context.fillRect(x, y, 1, 1);
+  });
+}
+
+draw();
+
+
+// draw()

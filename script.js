@@ -6,6 +6,7 @@ const context = canvas.getContext("2d");
 
 context.scale(10, 10)
 let direction = [ 1, 0]
+let apple = [8,3]
 
 document.body.onkeyup = function(e){
   console.log('asdfsf', e);
@@ -47,9 +48,14 @@ function updateLoop() {
 
 function draw() {
   context.clearRect(0,0, 400, 400)
+
+  context.fillStyle = 'black'
   snake.forEach(([x, y]) => {
     context.fillRect(x, y, 1, 1);
   });
+
+  context.fillStyle = 'red'
+  context.fillRect(apple[0], apple[1], 1, 1)
 }
 
 setInterval(updateLoop, 300)

@@ -36,11 +36,11 @@ const snake = [
 function updateLoop() {
   let head = snake[0]
   snake.unshift([
-    head[0] + direction[0],
-    head[1] + direction[1]
+    snake[0][0] + direction[0],
+    snake[0][1] + direction[1]
   ])
 
-  if (head[0] === apple[0] && head[1] === apple[1]){
+  if (snake[0][0] === apple[0] && snake[0][1] === apple[1]){
     apple = [ Math.floor(Math.random() * 20) , Math.floor(Math.random() * 20)]
   } else {
     snake.pop()
